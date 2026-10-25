@@ -1,0 +1,3 @@
+# Source in LF everywhere; test PDFs byte for byte (a line-ending change breaks their offsets).
+* text=auto eol=lf
+*.pdf binary

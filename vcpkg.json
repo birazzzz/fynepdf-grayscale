@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "name": "fynepdf-grayscale",
+  "version": "0.1.0",
+  "description": "PDFs made grey in place: text stays text, nothing redrawn",
+  "homepage": "https://github.com/birazzzz/fynepdf-grayscale",
+  "license": "MIT",
+  "dependencies": ["qpdf", "libjpeg-turbo", "openjpeg", "lcms"]
+}
