@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/grayscale.svg" width="100%" alt="fynepdf-grayscale turns a colour page grey in place, and its text can still be selected. Of 950 files with text it lost the text of none, against 40 for Ghostscript and all 950 when pages are drawn as pictures; converting 1,067 files takes 78 seconds, against 1,038 for Ghostscript.">
+  <img src="docs/grayscale.svg" width="100%" alt="One real PDF from the web made grey, then all its text selected: Ghostscript 10.08's file keeps 15% of the text, pages drawn as pictures keep none and grow to 5.6 MB, fynepdf-grayscale's keeps all of it at 202 KB. Making 1,067 files grey takes fynepdf-grayscale 78 seconds and Ghostscript 1,038.">
 </p>
 
 # fynepdf-grayscale
