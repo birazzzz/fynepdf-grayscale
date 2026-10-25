@@ -67,7 +67,7 @@ bool GrayFromYCbCr(const std::string &bytes, std::string &out) {
   created_dst = true;
   Baseline(&dst);
   jpeg_copy_critical_parameters(&src, &dst);
-  // As jpegtran's transupp.c: grey, keeping the brightness channel's quantisation table.
+  // As jpegtran's transupp.c: gray, keeping the brightness channel's quantisation table.
   const int table = dst.comp_info[0].quant_tbl_no;
   jpeg_set_colorspace(&dst, JCS_GRAYSCALE);
   dst.comp_info[0].quant_tbl_no = table;

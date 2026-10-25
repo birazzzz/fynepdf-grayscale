@@ -1,4 +1,4 @@
-// Makes a PDF grey: every page, or only some (`gray in.pdf out.pdf 2-5`).
+// Makes a PDF gray: every page, or only some (`gray in.pdf out.pdf 2-5`).
 #include <fynepdf/grayscale/grayscale.h>
 
 #include <iostream>
@@ -22,7 +22,7 @@ int main(int argc, char **argv) {
     std::cerr << "not converted: " << result.error << "\n";  // "password", "unreadable", ...
     return 1;
   }
-  std::cout << result.converted << " of " << result.pages << " pages grey, " << result.images
+  std::cout << result.converted << " of " << result.pages << " pages gray, " << result.images
             << " pictures (" << result.jpegLossless << " JPEGs without re-compressing)\n";
   return 0;
 }

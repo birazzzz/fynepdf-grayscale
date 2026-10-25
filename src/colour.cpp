@@ -163,7 +163,7 @@ private:
   // replaced in their colour spaces, see Spot()).
   bool Wanted(Kind kind, QPDFObjectHandle space) const { return gray_ ? Convertible(kind) : kind == Kind::Cmyk && Device(space); }
 
-  // A colour of |space| in the target: grey, or RGB from device CMYK.
+  // A colour of |space| in the target: gray, or RGB from device CMYK.
   bool ToTarget(Kind kind, QPDFObjectHandle space, const std::vector<double> &values, std::vector<double> &out, QPDFObjectHandle resources) {
     if (gray_) {
       double gray = 0;
@@ -290,7 +290,7 @@ private:
     return profiles_.Usable(key, std::string(), n) ? key : "";
   }
 
-  // A colour of an ICC-based space as grey through its own profile; false when it has none usable.
+  // A colour of an ICC-based space as gray through its own profile; false when it has none usable.
   bool IccGray(QPDFObjectHandle space, const std::vector<double> &values, double &gray) {
     const std::string key = IccKey(space);
     if (key.empty() || values.size() < 3)
@@ -303,7 +303,7 @@ private:
     return true;
   }
 
-  // A colour of |space| as grey, 0 (black) to 1 (white).
+  // A colour of |space| as gray, 0 (black) to 1 (white).
   bool ToGray(Kind kind, QPDFObjectHandle space, const std::vector<double> &values, double &gray, QPDFObjectHandle resources, int depth = 0) {
     if (depth > 8)
       return false;
@@ -349,7 +349,7 @@ private:
     return found->second.get();
   }
 
-  // A spot ink's tints as the grey its alternate colours make; the registration colour (All)
+  // A spot ink's tints as the gray its alternate colours make; the registration colour (All)
   // as black.
   bool SpotGray(QPDFObjectHandle space, const std::vector<double> &tints, double &gray, QPDFObjectHandle resources, int depth) {
     if (IsName(space.getArrayItem(0), "/Separation") && IsName(space.getArrayItem(1), "/All")) {
@@ -680,7 +680,7 @@ private:
 
   // An inline picture (BI ... ID ... EI) in the target: decoded through its filters (qpdf's, by
   // way of the scratch stream) and written back as hex; a palette converted where it stands.
-  // When it can't be decoded, Grayscale draws it grey through the wrapper. "" to keep it.
+  // When it can't be decoded, Grayscale draws it gray through the wrapper. "" to keep it.
   std::string InlineImage(const std::string &text, QPDFObjectHandle resources) {
     size_t pos = 0;
     Token token;
@@ -852,7 +852,7 @@ private:
   }
 
   // Pixels of |kind| (|components| samples of |bits| each, rows padded to bytes) as 8-bit target
-  // pixels (grey, or RGB), through /Decode (default 0 to 1, Lab's own ranges).
+  // pixels (gray, or RGB), through /Decode (default 0 to 1, Lab's own ranges).
   bool ToTargetPixels(Kind kind, QPDFObjectHandle space, std::vector<double> decode, int bits, size_t components, int width, int height,
                       const std::string &data, std::string &out, QPDFObjectHandle resources) {
     if ((bits != 1 && bits != 2 && bits != 4 && bits != 8 && bits != 16) || components == 0 || width <= 0 || height <= 0)
@@ -947,7 +947,7 @@ private:
   // needn't be) rewritten stays byte for byte: mesh gradients, pictures without a decoder, and
   // for PDF/A every device CMYK picture and gradient.
   // Grayscale: RGB or CMYK as DeviceN with inks no device has, so readers draw it through its
-  // alternate, DeviceGray, by a calculator function computing the grey.
+  // alternate, DeviceGray, by a calculator function computing the gray.
   // PDF/A: device CMYK as DeviceN of the four process inks with a DeviceRGB alternate, sampled at
   // the sixteen ink combinations: drawn between them exactly as CmykToRgb converts.
   // Null for other kinds.
@@ -965,7 +965,7 @@ private:
     if (!made.isNull())
       return made;
     const bool rgb = kind == Kind::Rgb;
-    // Inputs on the stack in order (the last on top); out comes the grey.
+    // Inputs on the stack in order (the last on top); out comes the gray.
     QPDFObjectHandle function = QPDFObjectHandle::newStream(
         &q_, rgb ? "{0.114 mul exch 0.587 mul add exch 0.299 mul add}" : "{exch 0.11 mul add exch 0.59 mul add exch 0.3 mul add 1 exch sub dup 0 lt {pop 0} if}");
     QPDFObjectHandle dict = function.getDict();
@@ -1034,9 +1034,9 @@ private:
       else if (kind == Kind::Spot)
         Spot(space, resources);
     }
-    // With everything grey, the device spaces' calibrated stand-ins go: DefaultRGB and
+    // With everything gray, the device spaces' calibrated stand-ins go: DefaultRGB and
     // DefaultCMYK have nothing left to apply to, and DefaultGray (often CalGray with a D50 white)
-    // would tint the new greys in some readers.
+    // would tint the new grays in some readers.
     if (gray_)
       for (const char *key : {"/DefaultGray", "/DefaultRGB", "/DefaultCMYK"})
         if (spaces.isDictionary())
@@ -1236,7 +1236,7 @@ private:
       ++(kind == Kind::Spot ? stats_.spots : stats_.images);
       return;
     }
-    // Not decodable here, or too large to decode: drawn grey through the wrapper instead.
+    // Not decodable here, or too large to decode: drawn gray through the wrapper instead.
     Wrap(image, kind);
   }
 
@@ -1299,7 +1299,7 @@ private:
     if (!Filtered(image, dict.getKey("/Filter").isArray() ? dict.getKey("/Filter").getArrayNItems() - 1 : 0, false, bytes) ||
         !jpx::DecodeGray(bytes, gray, alpha, width, height) || width != Integer(dict, "/Width", width) ||
         height != Integer(dict, "/Height", height)) {
-      // Without a decoder, a picture that names its colour space is drawn grey through the wrapper.
+      // Without a decoder, a picture that names its colour space is drawn gray through the wrapper.
       if (kind == Kind::Rgb || kind == Kind::Cmyk)
         Wrap(image, kind);
       else
@@ -1327,8 +1327,8 @@ private:
   // ---------------------------------------------------------------------------------------------
   // Gradients
 
-  // Grayscale: an exponential function's ends (C0, C1) as grey, or a stitched function's every
-  // part; RGB and CMYK only, where grey is linear in the colour. Nothing otherwise.
+  // Grayscale: an exponential function's ends (C0, C1) as gray, or a stitched function's every
+  // part; RGB and CMYK only, where gray is linear in the colour. Nothing otherwise.
   QPDFObjectHandle LinearFunction(QPDFObjectHandle function, Kind kind, int depth = 0) {
     QPDFObjectHandle dict = function.isStream() ? function.getDict() : function;
     if (!gray_ || depth > 8 || !dict.isDictionary() || (kind != Kind::Rgb && kind != Kind::Cmyk))
@@ -1436,7 +1436,7 @@ private:
       ++stats_.wrapped;
       return;
     }
-    // The shortcut through the function's ends holds for the grey formulas, not through a profile.
+    // The shortcut through the function's ends holds for the gray formulas, not through a profile.
     QPDFObjectHandle made = (type == 2 || type == 3) && IccKey(space).empty() ? LinearFunction(function, kind) : QPDFObjectHandle::newNull();
     if (made.isNull()) {
       // Function-based gradients sample over their /Domain; axial and radial over theirs; a
@@ -1467,7 +1467,7 @@ private:
   // ---------------------------------------------------------------------------------------------
   // Comments and form fields
 
-  // A colour array (an annotation's /C or /IC, a widget's /MK /BC or /BG) in the target: grey for
+  // A colour array (an annotation's /C or /IC, a widget's /MK /BC or /BG) in the target: gray for
   // Grayscale; for PDF/A only CMYK (four values) to RGB.
   void ColourArray(QPDFObjectHandle dict, const char *key) {
     std::vector<double> values = Numbers(dict.getKey(key));

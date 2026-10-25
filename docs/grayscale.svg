@@ -28,7 +28,7 @@ text{font-family:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif}
 .made{font-size:18px;font-weight:600;fill:#404040}
 .card{fill:#fff;filter:url(#shadow)}
 .paper{filter:url(#paper)}
-.grey{animation:reveal 15s cubic-bezier(0.65,0,0.35,1) infinite}
+.gray{animation:reveal 15s cubic-bezier(0.65,0,0.35,1) infinite}
 .o,.l,.bob,.eyes{transform-box:fill-box}
 .o{transform-origin:center}
 .l{transform-origin:left center}
@@ -96,7 +96,7 @@ text{font-family:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif}
     <rect x="18" y="216" width="174" height="5" rx="2.5" fill="#e6e8ee"/>
     <rect x="18" y="232" width="110" height="5" rx="2.5" fill="#e6e8ee"/>
     <text x="18" y="250" class="pagebody" fill="#c4489a">Revenue up 12%</text></g>
-    <g class="grey"><rect width="210" height="270" rx="6" fill="#fff"/>
+    <g class="gray"><rect width="210" height="270" rx="6" fill="#fff"/>
     <text x="18" y="32" class="pagehead" fill="rgb(102,102,102)">Quarterly report</text>
     <rect x="18" y="44" width="150" height="5" rx="2.5" fill="#e6e8ee"/>
     <rect x="18" y="56" width="120" height="5" rx="2.5" fill="#e6e8ee"/>
@@ -146,7 +146,7 @@ text{font-family:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif}
     <rect x="18" y="216" width="174" height="5" rx="2.5" fill="#e6e8ee"/>
     <rect x="18" y="232" width="110" height="5" rx="2.5" fill="#e6e8ee"/>
     <text x="18" y="250" class="pagebody" fill="#c4489a">Revenue up 12%</text></g>
-    <g class="grey"><rect width="210" height="270" rx="6" fill="#fff"/>
+    <g class="gray"><rect width="210" height="270" rx="6" fill="#fff"/>
     <text x="18" y="32" class="pagehead" fill="rgb(102,102,102)">Quarterly report</text>
     <rect x="18" y="44" width="150" height="5" rx="2.5" fill="#e6e8ee"/>
     <rect x="18" y="56" width="120" height="5" rx="2.5" fill="#e6e8ee"/>
@@ -196,7 +196,7 @@ text{font-family:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif}
     <rect x="18" y="216" width="174" height="5" rx="2.5" fill="#e6e8ee"/>
     <rect x="18" y="232" width="110" height="5" rx="2.5" fill="#e6e8ee"/>
     <text x="18" y="250" class="pagebody" fill="#c4489a">Revenue up 12%</text></g>
-    <g class="grey"><rect width="210" height="270" rx="6" fill="#fff"/>
+    <g class="gray"><rect width="210" height="270" rx="6" fill="#fff"/>
     <text x="18" y="32" class="pagehead" fill="rgb(102,102,102)">Quarterly report</text>
     <rect x="18" y="44" width="150" height="5" rx="2.5" fill="#e6e8ee"/>
     <rect x="18" y="56" width="120" height="5" rx="2.5" fill="#e6e8ee"/>

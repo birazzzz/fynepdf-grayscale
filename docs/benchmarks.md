@@ -1,7 +1,7 @@
 # Benchmarks
 
-fynepdf-grayscale against the two usual ways of making a PDF grey, on the same 1,067 files:
-Ghostscript's grey conversion, and drawing every page as a grey picture (what many "convert to
+fynepdf-grayscale against the two usual ways of making a PDF gray, on the same 1,067 files:
+Ghostscript's gray conversion, and drawing every page as a gray picture (what many "convert to
 grayscale" apps do).
 
 **In short:** no colour left on any page, no text lost, nothing lost (bookmarks, links, form
@@ -51,7 +51,7 @@ test, so Grayscale doesn't run on it; a private set of 93 files is left out of t
 - **Colour left:** Poppler draws the first 10 pages of the result; a page with colour on more
   than 0.1% of its pixels counts.
 - **Text lost:** pdf.js finds less than 90% of the input's text in the result.
-- **Pages look different:** the result's pages against the input's drawn in grey, at 30 dpi.
+- **Pages look different:** the result's pages against the input's drawn in gray, at 30 dpi.
 - **Lost:** bookmarks, links, form fields, tags, comments, attachments, signatures or pages the
   input had and the result doesn't.
 - **Time and memory:** GNU time per conversion, 4 at once in Docker with 8 CPUs and 8 GB on an

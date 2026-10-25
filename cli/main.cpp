@@ -44,9 +44,9 @@ bool ParsePages(const std::string &text, std::vector<int> &pages) {
 
 int Usage() {
   std::cerr << "usage: fynepdf-grayscale <input.pdf> <output.pdf> [--pages 1-3,5] [--only drawings|images] [--jpeg-quality 90]\n"
-               "  --pages         only these pages turn grey; the rest stay exactly as they are\n"
-               "  --only drawings text and drawings turn grey, pictures keep their colour\n"
-               "  --only images   pictures turn grey, text and drawings keep their colour\n";
+               "  --pages         only these pages turn gray; the rest stay exactly as they are\n"
+               "  --only drawings text and drawings turn gray, pictures keep their colour\n"
+               "  --only images   pictures turn gray, text and drawings keep their colour\n";
   return 64;
 }
 

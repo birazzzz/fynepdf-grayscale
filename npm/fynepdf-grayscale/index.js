@@ -47,7 +47,7 @@ function pageList(pages) {
 }
 
 /**
- * Makes |input| grey and writes |output|. Resolves with what was converted; rejects when the file
+ * Makes |input| gray and writes |output|. Resolves with what was converted; rejects when the file
  * can't be read, needs a password, doesn't have the pages asked for, or can't be written.
  */
 function toGray(input, output, options = {}) {

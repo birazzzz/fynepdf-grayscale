@@ -185,7 +185,7 @@ bool DecodeGray(const std::string &bytes, std::string &gray, std::string &alpha,
     height = static_cast<int>(comps[0].h * std::max<OPJ_UINT32>(1, comps[0].dy));
     const bool ycc = image->color_space == OPJ_CLRSPC_SYCC || image->color_space == OPJ_CLRSPC_EYCC;
     const bool cmyk = image->color_space == OPJ_CLRSPC_CMYK && n >= 4;
-    // The alpha channel: the one OpenJPEG marks, or the last of 2 (grey) or 4 (RGB) otherwise.
+    // The alpha channel: the one OpenJPEG marks, or the last of 2 (gray) or 4 (RGB) otherwise.
     int alpha_at = -1;
     for (int k = 0; k < n; ++k)
       if (comps[k].alpha)
@@ -204,7 +204,7 @@ bool DecodeGray(const std::string &bytes, std::string &gray, std::string &alpha,
         else if (n >= 3 && !ycc)
           g = 0.299 * Sample(comps[0], x, y) + 0.587 * Sample(comps[1], x, y) + 0.114 * Sample(comps[2], x, y);
         else
-          g = Sample(comps[0], x, y);  // grey, or YCC's brightness
+          g = Sample(comps[0], x, y);  // gray, or YCC's brightness
         const size_t at = static_cast<size_t>(y) * width + x;
         gray[at] = static_cast<char>(std::lround(std::clamp(g, 0.0, 1.0) * 255));
         if (alpha_at >= 0)

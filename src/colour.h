@@ -1,7 +1,7 @@
 #pragma once
 
 // The colour converter both Grayscale and PDF/A use: a document's colours rewritten in place, to
-// grey (Grayscale) or, for PDF/A, device CMYK to RGB (an sRGB output intent can't cover CMYK).
+// gray (Grayscale) or, for PDF/A, device CMYK to RGB (an sRGB output intent can't cover CMYK).
 
 #include <memory>
 #include <vector>

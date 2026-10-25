@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 project(fynepdf_grayscale
     VERSION 0.1.0
-    DESCRIPTION "PDFs made grey in place: text stays text, nothing redrawn"
+    DESCRIPTION "PDFs made gray in place: text stays text, nothing redrawn"
     HOMEPAGE_URL "https://github.com/birazzzz/fynepdf-grayscale"
     LANGUAGES CXX)
 
@@ -93,7 +93,7 @@ if(FYNEPDF_GRAYSCALE_OPENJPEG_TARGET)
     target_compile_definitions(fynepdf_grayscale PRIVATE FYNEPDF_GRAYSCALE_WITH_OPENJPEG)
     message(STATUS "fynepdf-grayscale: JPEG 2000 through ${FYNEPDF_GRAYSCALE_OPENJPEG_TARGET}")
 else()
-    message(STATUS "fynepdf-grayscale: no OpenJPEG, JPEG 2000 pictures are drawn grey through the wrapper colour space")
+    message(STATUS "fynepdf-grayscale: no OpenJPEG, JPEG 2000 pictures are drawn gray through the wrapper colour space")
 endif()
 
 set(FYNEPDF_GRAYSCALE_FOUND_LCMS OFF)

@@ -40,7 +40,7 @@ assert.equal(install.status, 0, install.stderr);
 // The command line.
 const shown = run("npx", ["--no-install", "fynepdf-grayscale", "--version"], project);
 assert.equal(shown.stdout, `fynepdf-grayscale ${version}`, shown.stderr);
-const cli = run("npx", ["--no-install", "fynepdf-grayscale", path.join(fixtures, "e-chrome-report.pdf"), "grey.pdf"], project);
+const cli = run("npx", ["--no-install", "fynepdf-grayscale", path.join(fixtures, "e-chrome-report.pdf"), "gray.pdf"], project);
 assert.equal(cli.status, 0, cli.stderr);
 const all = JSON.parse(cli.stdout);
 assert.ok(all.ok && all.converted === all.pages && all.colours > 0, cli.stdout);
@@ -63,7 +63,7 @@ fs.writeFileSync(path.join(project, "api.js"), api);
 const node = run("node", ["api.js"], project);
 assert.equal(node.status, 0, node.stderr);
 console.log("ok  toGray (options, errors reported)");
-for (const file of ["grey.pdf", "first.pdf"])
+for (const file of ["gray.pdf", "first.pdf"])
   assert.equal(fs.readFileSync(path.join(project, file)).subarray(0, 5).toString(), "%PDF-");
 fs.rmSync(project, { recursive: true, force: true });
 console.log(`npm packages ${version} work on ${process.platform}-${process.arch}`);

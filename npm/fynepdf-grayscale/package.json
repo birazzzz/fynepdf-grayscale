@@ -1,7 +1,7 @@
 {
   "name": "fynepdf-grayscale",
   "version": "0.1.0",
-  "description": "Make PDFs grey in place: text stays text, nothing redrawn. A command line and Node API, no Ghostscript",
+  "description": "Make PDFs gray in place: text stays text, nothing redrawn. A command line and Node API, no Ghostscript",
   "keywords": ["pdf", "grayscale", "greyscale", "black and white", "print", "qpdf", "ghostscript", "convert"],
   "homepage": "https://github.com/birazzzz/fynepdf-grayscale#readme",
   "bugs": "https://github.com/birazzzz/fynepdf-grayscale/issues",

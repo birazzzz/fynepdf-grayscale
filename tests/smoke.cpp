@@ -1,10 +1,10 @@
-// Makes every PDF in tests/fixtures grey and checks the results:
+// Makes every PDF in tests/fixtures gray and checks the results:
 //
 //   fynepdf_grayscale_smoke <fixtures> <out>
 //
 // Every file comes out, except the password-protected one (refused, with "password"), opens, and
 // has the same pages; the ones with colour have their colours, pictures or gradients rewritten.
-// Each is then made grey again with only the first page, and with each kind of content alone
+// Each is then made gray again with only the first page, and with each kind of content alone
 // (text and drawings only must leave pictures as they are; pictures only, gradients).
 
 #include "fynepdf/grayscale/grayscale.h"
@@ -85,10 +85,10 @@ int main(int argc, char **argv) {
       if (!part.ok)
         fail(input, std::string(drawings ? "drawings only: " : "images only: ") + ToJson(part));
       else if (drawings && part.images + part.inlineImages > 0)
-        fail(input, "drawings only made pictures grey: " + ToJson(part));
+        fail(input, "drawings only made pictures gray: " + ToJson(part));
       // (colours counts a picture's palette entries too, so only gradients tell here.)
       else if (!drawings && part.shadings > 0)
-        fail(input, "images only made gradients grey: " + ToJson(part));
+        fail(input, "images only made gradients gray: " + ToJson(part));
     }
   }
   std::printf("Grayscale: %d of %zu converted (%d had colour to change), %d failures\n", converted, files.size(), changed, failures);

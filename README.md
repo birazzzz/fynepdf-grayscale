@@ -4,7 +4,7 @@
 
 # fynepdf-grayscale
 
-**Make PDFs grey in place: text stays text, nothing is redrawn.** A C++17 library and command line
+**Make PDFs gray in place: text stays text, nothing is redrawn.** A C++17 library and command line
 on [qpdf](https://github.com/qpdf/qpdf), MIT licensed, with no Ghostscript.
 Made by [FynePDF](https://fynepdf.com) for its web and desktop apps.
 
@@ -12,10 +12,10 @@ Made by [FynePDF](https://fynepdf.com) for its web and desktop apps.
   patterns, spot inks, soft masks, and the appearances of comments and form fields.
 - **Nothing else changes:** text stays selectable and searchable, and bookmarks, links, form
   fields, tags and attachments aren't touched.
-- **Photos keep their quality:** most JPEGs are made grey without re-compressing them (their
+- **Photos keep their quality:** most JPEGs are made gray without re-compressing them (their
   brightness kept exactly, their colour dropped); files come out about the same size (median
   0.94× the input).
-- **Choose what turns grey:** some pages only, or only text and drawings (photos keep their
+- **Choose what turns gray:** some pages only, or only text and drawings (photos keep their
   colour), or only pictures.
 - **Light:** a typical file takes 0.01 s and 12 MB; the heaviest of 1,067 took 3.5 s and 255 MB.
 
@@ -27,7 +27,7 @@ On the same 1,067 files (1,000 PDFs from the web and 67 made for the tests):
 | --- | --- | --- | --- | --- | --- | --- |
 | **fynepdf-grayscale** | **0** | **0** | **0** | 0.94× | **78 s** | **255 MB** |
 | Ghostscript 10.08 | 5 | 40 | 370 | 0.64× | 1,038 s | 1.4 GB |
-| Pages drawn as grey pictures | 0 | 950 (all) | 593 | 4.46× | 705 s | 655 MB |
+| Pages drawn as gray pictures | 0 | 950 (all) | 593 | 4.46× | 705 s | 655 MB |
 
 "Lost" means bookmarks, links, form fields, tags, comments, attachments or signatures the input
 had and the result doesn't. Ghostscript's files are smaller because it re-compresses every
@@ -40,8 +40,8 @@ picture and drops what it doesn't carry over. Details and real files: [docs/benc
 ```sh
 npx fynepdf-grayscale input.pdf output.pdf                    # every page
 npx fynepdf-grayscale input.pdf output.pdf --pages 2-5,8      # only these pages
-npx fynepdf-grayscale input.pdf output.pdf --only drawings    # text and drawings grey, photos in colour
-npx fynepdf-grayscale input.pdf output.pdf --only images      # photos grey, text and drawings in colour
+npx fynepdf-grayscale input.pdf output.pdf --only drawings    # text and drawings gray, photos in colour
+npx fynepdf-grayscale input.pdf output.pdf --only images      # photos gray, text and drawings in colour
 ```
 
 Through npm it runs on Linux (x64, arm64), Windows (x64) and macOS (Apple silicon, Intel), with
@@ -75,7 +75,7 @@ It rejects when the file can't be read, needs a password, lacks the pages or can
 ```cpp
 #include <fynepdf/grayscale/grayscale.h>
 
-fynepdf::grayscale::GrayOptions options;  // everything grey, every page
+fynepdf::grayscale::GrayOptions options;  // everything gray, every page
 options.pages = {2, 3, 4};                // or only some (1-based); the rest stay exactly as they are
 // options.images = false;                // keep photos in colour
 
@@ -114,7 +114,7 @@ brew install cmake ninja qpdf jpeg-turbo openjpeg little-cms2
 
 cmake --preset default            # Release build with tests, into build/default
 cmake --build --preset default
-ctest --preset default            # makes the 64 test files grey, whole, in part and by kind
+ctest --preset default            # makes the 64 test files gray, whole, in part and by kind
 ```
 
 On Windows (or anywhere) with vcpkg: set `VCPKG_ROOT` and use `--preset vcpkg` instead.
@@ -132,7 +132,7 @@ Visual Studio builds are set up and covered by CI from the first release.
 It opens the PDF with qpdf, finds every place a colour is set (content streams, pictures,
 palettes, gradients, spot inks, patterns, comment appearances) and rewrites that colour where it
 stands, to luma, the brightness a JPEG stores (0.299 R + 0.587 G + 0.114 B). A picture that can't
-be decoded keeps its data and gets a colour space that draws it grey. Nothing is drawn, so text
+be decoded keeps its data and gets a colour space that draws it gray. Nothing is drawn, so text
 stays text and everything without colour stays byte for byte.
 
 More: [docs/how-it-works.md](docs/how-it-works.md).

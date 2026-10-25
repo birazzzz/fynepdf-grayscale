@@ -7,7 +7,7 @@ namespace fynepdf::grayscale::icc {
 
 // Colours through an ICC profile to sRGB, by Little CMS, when the library was built with it
 // (FYNEPDF_GRAYSCALE_WITH_LCMS): an ICC-based space's own profile instead of a formula, so a CMYK
-// photo turns the grey it shows as. Relative colorimetric with black point compensation, as
+// photo turns the gray it shows as. Relative colorimetric with black point compensation, as
 // Acrobat converts by default. Transforms are made once per profile (|key|).
 class Profiles {
 public:

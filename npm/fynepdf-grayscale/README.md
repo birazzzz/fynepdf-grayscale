@@ -1,6 +1,6 @@
 # fynepdf-grayscale
 
-**Make PDFs grey in place: text stays text, nothing is redrawn.** The
+**Make PDFs gray in place: text stays text, nothing is redrawn.** The
 [fynepdf-grayscale](https://github.com/birazzzz/fynepdf-grayscale) command line and a Node API,
 with no Ghostscript. Made by [FynePDF](https://fynepdf.com) for its web and desktop apps.
 
@@ -8,7 +8,7 @@ with no Ghostscript. Made by [FynePDF](https://fynepdf.com) for its web and desk
   patterns, spot inks, and the appearances of comments and form fields.
 - **Nothing else changes:** text stays selectable, and bookmarks, links, form fields, tags and
   attachments aren't touched.
-- **Photos keep their quality:** most JPEGs are made grey without re-compressing them.
+- **Photos keep their quality:** most JPEGs are made gray without re-compressing them.
 - **Fast:** a typical file takes 0.01 s; 1,067 files took 78 s, against 1,038 s for Ghostscript,
   which lost the text of 40 of them.
 
@@ -27,8 +27,8 @@ runs.
 ```sh
 npx fynepdf-grayscale input.pdf output.pdf                    # every page
 npx fynepdf-grayscale input.pdf output.pdf --pages 2-5,8      # only these pages
-npx fynepdf-grayscale input.pdf output.pdf --only drawings    # text and drawings grey, photos in colour
-npx fynepdf-grayscale input.pdf output.pdf --only images      # photos grey, text and drawings in colour
+npx fynepdf-grayscale input.pdf output.pdf --only drawings    # text and drawings gray, photos in colour
+npx fynepdf-grayscale input.pdf output.pdf --only images      # photos gray, text and drawings in colour
 ```
 
 It prints what it did as one line of JSON.
@@ -39,7 +39,7 @@ It prints what it did as one line of JSON.
 const { toGray } = require("fynepdf-grayscale"); // or: import { toGray } from "fynepdf-grayscale";
 
 const result = await toGray("input.pdf", "output.pdf", { pages: [2, 3, 4], only: "drawings" });
-console.log(`${result.converted} of ${result.pages} pages made grey`);
+console.log(`${result.converted} of ${result.pages} pages made gray`);
 ```
 
 `toGray` rejects when the file can't be read (`error.code` `"unreadable"`), needs a password

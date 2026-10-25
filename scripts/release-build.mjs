@@ -148,8 +148,8 @@ fs.writeFileSync(path.join(stage, "README.txt"), `fynepdf-grayscale ${version} f
 
   ${program} input.pdf output.pdf                    every page
   ${program} input.pdf output.pdf --pages 2-5,8      only these pages
-  ${program} input.pdf output.pdf --only drawings    text and drawings grey, photos in colour
-  ${program} input.pdf output.pdf --only images      photos grey, text and drawings in colour
+  ${program} input.pdf output.pdf --only drawings    text and drawings gray, photos in colour
+  ${program} input.pdf output.pdf --only images      photos gray, text and drawings in colour
 
 Documentation: https://github.com/birazzzz/fynepdf-grayscale
 

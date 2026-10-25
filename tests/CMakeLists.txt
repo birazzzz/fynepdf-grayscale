@@ -1,5 +1,5 @@
 # ctest: every file in fixtures/ (made for these tests: one PDF problem each, and exports from
-# Chrome, LibreOffice and LaTeX) made grey, whole, first page only, and each kind of content
+# Chrome, LibreOffice and LaTeX) made gray, whole, first page only, and each kind of content
 # alone.
 add_executable(fynepdf_grayscale_smoke smoke.cpp)
 target_link_libraries(fynepdf_grayscale_smoke PRIVATE fynepdf::grayscale)

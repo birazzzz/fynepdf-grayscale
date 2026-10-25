@@ -32,7 +32,7 @@ const TIME = { ours: 78, gs: 1038 };
 
 const LOOP = 15;
 const SCENES = [[0, 6.6], [6.6, 12.6], [12.6, LOOP]];
-const SWEEP = [1.4, 2.5]; // the pages turning grey
+const SWEEP = [1.4, 2.5]; // the pages turning gray
 const SELECT = 3.0; // select all
 const pc = (s) => `${Math.min(100, (100 * s) / LOOP).toFixed(2)}%`;
 const css = [];
@@ -62,9 +62,9 @@ const cross = (cx, cy, r = 11) =>
 // The page: heading, chart, photo, lines of text. Drawn at 0,0, 210 by 270.
 // Each text item, as [x, y, width]: the heading, six lines, the coloured line at the bottom.
 const TEXT = [[18, 20, 132], ...[0, 1, 2, 3, 4, 5].map((i) => [18, 152 + i * 16, i % 3 === 2 ? 110 : 174]), [18, 240, 100]];
-function page(grey) {
+function page(gray) {
   // Luma of each colour, 0.299 R + 0.587 G + 0.114 B, as the library computes it.
-  const c = (colour, luma) => (grey ? `rgb(${luma},${luma},${luma})` : colour);
+  const c = (colour, luma) => (gray ? `rgb(${luma},${luma},${luma})` : colour);
   return `<rect width="210" height="270" rx="6" fill="#fff"/>
     <text x="18" y="32" class="pagehead" fill="${c("#007bff", 102)}">Quarterly report</text>
     <rect x="18" y="44" width="150" height="5" rx="2.5" fill="#e6e8ee"/>
@@ -78,7 +78,7 @@ function page(grey) {
     <circle cx="172" cy="92" r="8" fill="${c("#ffc94a", 205)}"/>
     <path d="M106 124 q20 -18 40 -4 t46 -6 v24 h-86 z" fill="${c("#4caf6a", 140)}"/>
     <path d="M106 130 q30 -10 56 2 t30 0 v6 h-86 z" fill="${c("#2e7d4a", 98)}"/>
-    ${TEXT.slice(1, 7).map(([x, y, w]) => `<rect x="${x}" y="${y}" width="${w}" height="5" rx="2.5" fill="${grey ? "#d6d6d6" : "#e6e8ee"}"/>`).join("\n    ")}
+    ${TEXT.slice(1, 7).map(([x, y, w]) => `<rect x="${x}" y="${y}" width="${w}" height="5" rx="2.5" fill="${gray ? "#d6d6d6" : "#e6e8ee"}"/>`).join("\n    ")}
     <text x="18" y="250" class="pagebody" fill="${c("#c4489a", 115)}">Revenue up 12%</text>`;
 }
 
@@ -108,7 +108,7 @@ CARDS.forEach((card, i) => {
   <text x="${cx}" y="204" class="${card.ok ? "name-ours" : "name"}" text-anchor="middle">${card.name}</text>
   <g transform="translate(${cx - 105} 228)">
     <g class="paper">${page(false)}</g>
-    <g class="grey">${page(true)}</g>
+    <g class="gray">${page(true)}</g>
     ${sel}
   </g>
   <g ${rise(SELECT + 1.0, 6)}>
@@ -189,7 +189,7 @@ text{font-family:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif}
 .made{font-size:18px;font-weight:600;fill:#404040}
 .card{fill:#fff;filter:url(#shadow)}
 .paper{filter:url(#paper)}
-.grey{animation:reveal ${LOOP}s cubic-bezier(0.65,0,0.35,1) infinite}
+.gray{animation:reveal ${LOOP}s cubic-bezier(0.65,0,0.35,1) infinite}
 .o,.l,.bob,.eyes{transform-box:fill-box}
 .o{transform-origin:center}
 .l{transform-origin:left center}
