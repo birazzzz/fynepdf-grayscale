@@ -38,11 +38,16 @@ picture and drops what it doesn't carry over. Details and real files: [docs/benc
 ### From the command line
 
 ```sh
-fynepdf-grayscale input.pdf output.pdf                    # every page
-fynepdf-grayscale input.pdf output.pdf --pages 2-5,8      # only these pages
-fynepdf-grayscale input.pdf output.pdf --only drawings    # text and drawings grey, photos in colour
-fynepdf-grayscale input.pdf output.pdf --only images      # photos grey, text and drawings in colour
+npx fynepdf-grayscale input.pdf output.pdf                    # every page
+npx fynepdf-grayscale input.pdf output.pdf --pages 2-5,8      # only these pages
+npx fynepdf-grayscale input.pdf output.pdf --only drawings    # text and drawings grey, photos in colour
+npx fynepdf-grayscale input.pdf output.pdf --only images      # photos grey, text and drawings in colour
 ```
+
+Through npm it runs on Linux (x64, arm64), Windows (x64) and macOS (Apple silicon, Intel), with
+nothing to build. Or download your platform's archive from
+[Releases](https://github.com/birazzzz/fynepdf-grayscale/releases): one program, ready to run as
+`./fynepdf-grayscale input.pdf output.pdf`.
 
 It prints what it did as one line of JSON:
 
@@ -52,6 +57,18 @@ It prints what it did as one line of JSON:
 
 Exit codes: 0 done, 2 needs a password, 3 can't be read, 4 a page that isn't in the file, 5 can't
 be written.
+
+### From Node
+
+```js
+const { toGray } = require("fynepdf-grayscale");   // npm install fynepdf-grayscale
+
+const result = await toGray("in.pdf", "out.pdf", { pages: [2, 3, 4], only: "drawings" });
+// result.converted, result.images, ...: the JSON above
+```
+
+It rejects when the file can't be read, needs a password, lacks the pages or can't be written
+(`error.code`). Types included; more in [npm/fynepdf-grayscale](npm/fynepdf-grayscale/README.md).
 
 ### From C++
 
@@ -101,6 +118,11 @@ ctest --preset default            # makes the 64 test files grey, whole, in part
 ```
 
 On Windows (or anywhere) with vcpkg: set `VCPKG_ROOT` and use `--preset vcpkg` instead.
+
+The self-contained program the releases ship (its libraries linked in from vcpkg) comes from
+`node scripts/release-build.mjs <target>`, for `linux-x64`, `linux-arm64`, `win32-x64`,
+`darwin-arm64` or `darwin-x64`; Linux targets build in Docker from any machine.
+[RELEASING.md](RELEASING.md) has the rest.
 
 Built and tested on Linux (Debian 12, GCC 12) and Windows (LLVM-MinGW, Clang 22). macOS and
 Visual Studio builds are set up and covered by CI from the first release.

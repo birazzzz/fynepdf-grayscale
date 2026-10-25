@@ -1,6 +1,7 @@
 // fynepdf-grayscale: the library's command line.
 //
 //   fynepdf-grayscale <input.pdf> <output.pdf> [--pages 1-3,5] [--only drawings|images] [--jpeg-quality 90]
+//   fynepdf-grayscale --version
 //
 // Prints the result as one line of JSON. Exit codes: 0 done, 2 needs a password, 3 can't be read,
 // 4 a page that isn't in the file, 5 can't be written, 64 wrong arguments.
@@ -11,6 +12,10 @@
 #include <iostream>
 #include <string>
 #include <vector>
+
+#ifndef FYNEPDF_GRAYSCALE_VERSION
+#define FYNEPDF_GRAYSCALE_VERSION "unknown"
+#endif
 
 namespace {
 
@@ -48,6 +53,10 @@ int Usage() {
 } // namespace
 
 int main(int argc, char **argv) {
+  if (argc == 2 && std::string(argv[1]) == "--version") {
+    std::cout << "fynepdf-grayscale " FYNEPDF_GRAYSCALE_VERSION "\n";
+    return 0;
+  }
   if (argc < 3)
     return Usage();
   fynepdf::grayscale::GrayOptions options;

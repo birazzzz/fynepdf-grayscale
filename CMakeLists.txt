@@ -109,6 +109,7 @@ endif()
 if(FYNEPDF_GRAYSCALE_CLI)
     add_executable(fynepdf-grayscale cli/main.cpp)
     target_link_libraries(fynepdf-grayscale PRIVATE fynepdf::grayscale)
+    target_compile_definitions(fynepdf-grayscale PRIVATE FYNEPDF_GRAYSCALE_VERSION="${PROJECT_VERSION}")
 endif()
 
 if(FYNEPDF_GRAYSCALE_TESTS)

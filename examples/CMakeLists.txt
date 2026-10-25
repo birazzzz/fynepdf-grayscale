@@ -6,7 +6,7 @@ project(fynepdf_grayscale_example LANGUAGES CXX)
 include(FetchContent)
 FetchContent_Declare(fynepdf_grayscale
     GIT_REPOSITORY https://github.com/birazzzz/fynepdf-grayscale.git
-    GIT_TAG main)
+    GIT_TAG v0.1.0)
 # Or, from an installed copy (or vcpkg): find_package(fynepdf_grayscale CONFIG REQUIRED)
 FetchContent_MakeAvailable(fynepdf_grayscale)
 
