@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="One real 209 KB PDF from the web made grey three ways, then all its text selected: Ghostscript 10.08's file keeps 15% of the text (228 KB), pages drawn as pictures keep none (5.6 MB), fynepdf-grayscale's keeps all of it (202 KB). Making 1,067 files grey takes fynepdf-grayscale 78 seconds and Ghostscript 1,038: fynepdf-grayscale is done when Ghostscript has done 8%. Text stays text, links and tags kept, 13 times faster than Ghostscript. Made by FynePDF.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="One real 209 KB PDF from the web made gray three ways, then all its text selected: Ghostscript 10.08's file keeps 15% of the text (228 KB), pages drawn as pictures keep none (5.6 MB), fynepdf-grayscale's keeps all of it (202 KB). Making 1,067 files gray takes fynepdf-grayscale 78 seconds and Ghostscript 1,038: fynepdf-grayscale is done when Ghostscript has done 8%. Text stays text, links and tags kept, 13 times faster than Ghostscript. Made by FynePDF.">
 <title>fynepdf-grayscale against Ghostscript</title>
 <defs>
   <linearGradient id="blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#007bff"/><stop offset="1" stop-color="#0046b7"/></linearGradient>
@@ -70,7 +70,7 @@ text{font-family:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif}
 <rect width="1200" height="675" fill="#f3f1f0"/>
 <g class="still" style="animation:k0 15s cubic-bezier(0.4,0,0.2,1) infinite">
   <g style="animation:k1 15s cubic-bezier(0.16,1,0.3,1) infinite">
-    <text x="600" y="92" class="h1" text-anchor="middle">One real PDF from the web, made grey</text>
+    <text x="600" y="92" class="h1" text-anchor="middle">One real PDF from the web, made gray</text>
     <text x="600" y="126" class="h2" text-anchor="middle">209 KB in · then select all its text</text>
   </g>
   <rect x="60" y="160" width="340" height="460" rx="20" class="card"/>
@@ -119,8 +119,8 @@ text{font-family:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif}
     <rect x="15" y="16" width="138" height="18" rx="2" fill="#007bff" fill-opacity="0.28" class="l" style="animation:k2 15s cubic-bezier(0.16,1,0.3,1) infinite"/>
   </g>
   <g style="animation:k3 15s cubic-bezier(0.16,1,0.3,1) infinite">
-    <circle cx="160" cy="545" r="10" fill="#d55418"/><path d="M156.5 541.5 l7 7 m0 -7 l-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-    <text x="180" y="551" class="res">15% of the text</text>
+    <circle cx="157" cy="545" r="10" fill="#d55418"/><path d="M153.5 541.5 l7 7 m0 -7 l-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+    <text x="177" y="551" class="res">15% of the text</text>
   </g>
   <g style="animation:k4 15s cubic-bezier(0.16,1,0.3,1) infinite"><text x="230" y="586" class="size" text-anchor="middle">228 KB</text></g>
   <rect x="430" y="160" width="340" height="460" rx="20" class="card"/>
@@ -169,8 +169,8 @@ text{font-family:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif}
     
   </g>
   <g style="animation:k5 15s cubic-bezier(0.16,1,0.3,1) infinite">
-    <circle cx="530" cy="545" r="10" fill="#d55418"/><path d="M526.5 541.5 l7 7 m0 -7 l-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-    <text x="550" y="551" class="res">No text</text>
+    <circle cx="562" cy="545" r="10" fill="#d55418"/><path d="M558.5 541.5 l7 7 m0 -7 l-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+    <text x="582" y="551" class="res">No text</text>
   </g>
   <g style="animation:k6 15s cubic-bezier(0.16,1,0.3,1) infinite"><text x="600" y="586" class="size-bad" text-anchor="middle">5.6 MB</text></g>
   <rect x="800" y="160" width="340" height="460" rx="20" class="card"/>
@@ -219,14 +219,14 @@ text{font-family:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif}
     <rect x="15" y="16" width="138" height="18" rx="2" fill="#007bff" fill-opacity="0.28" class="l" style="animation:k7 15s cubic-bezier(0.16,1,0.3,1) infinite"/><rect x="15" y="148" width="180" height="13" rx="2" fill="#007bff" fill-opacity="0.28" class="l" style="animation:k8 15s cubic-bezier(0.16,1,0.3,1) infinite"/><rect x="15" y="164" width="180" height="13" rx="2" fill="#007bff" fill-opacity="0.28" class="l" style="animation:k9 15s cubic-bezier(0.16,1,0.3,1) infinite"/><rect x="15" y="180" width="116" height="13" rx="2" fill="#007bff" fill-opacity="0.28" class="l" style="animation:k10 15s cubic-bezier(0.16,1,0.3,1) infinite"/><rect x="15" y="196" width="180" height="13" rx="2" fill="#007bff" fill-opacity="0.28" class="l" style="animation:k11 15s cubic-bezier(0.16,1,0.3,1) infinite"/><rect x="15" y="212" width="180" height="13" rx="2" fill="#007bff" fill-opacity="0.28" class="l" style="animation:k12 15s cubic-bezier(0.16,1,0.3,1) infinite"/><rect x="15" y="228" width="116" height="13" rx="2" fill="#007bff" fill-opacity="0.28" class="l" style="animation:k13 15s cubic-bezier(0.16,1,0.3,1) infinite"/><rect x="15" y="241" width="106" height="13" rx="2" fill="#007bff" fill-opacity="0.28" class="l" style="animation:k14 15s cubic-bezier(0.16,1,0.3,1) infinite"/>
   </g>
   <g style="animation:k15 15s cubic-bezier(0.16,1,0.3,1) infinite">
-    <circle cx="904" cy="545" r="10" fill="#18d54b"/><path d="M899.5 545.5 l3 3 l6 -6.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="920" y="551" class="res-ours">All the text</text>
+    <circle cx="915.5" cy="545" r="10" fill="#18d54b"/><path d="M911 545.5 l3 3 l6 -6.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="935.5" y="551" class="res-ours">All the text</text>
   </g>
   <g style="animation:k16 15s cubic-bezier(0.16,1,0.3,1) infinite"><text x="970" y="586" class="size" text-anchor="middle">202 KB</text></g>
 </g>
 <g style="animation:k17 15s cubic-bezier(0.4,0,0.2,1) infinite">
   <g style="animation:k18 15s cubic-bezier(0.16,1,0.3,1) infinite">
-    <text x="600" y="150" class="h1" text-anchor="middle">Making 1,067 files grey</text>
+    <text x="600" y="150" class="h1" text-anchor="middle">Making 1,067 files gray</text>
     <text x="600" y="184" class="h2" text-anchor="middle">every conversion's time, added up</text>
   </g>
   <text x="140" y="300" class="name-ours">fynepdf-grayscale</text>

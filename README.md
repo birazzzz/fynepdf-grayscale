@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/grayscale.svg" width="100%" alt="One real PDF from the web made grey, then all its text selected: Ghostscript 10.08's file keeps 15% of the text, pages drawn as pictures keep none and grow to 5.6 MB, fynepdf-grayscale's keeps all of it at 202 KB. Making 1,067 files grey takes fynepdf-grayscale 78 seconds and Ghostscript 1,038.">
+  <img src="docs/grayscale.svg" width="100%" alt="One real PDF from the web made gray, then all its text selected: Ghostscript 10.08's file keeps 15% of the text, pages drawn as pictures keep none and grow to 5.6 MB, fynepdf-grayscale's keeps all of it at 202 KB. Making 1,067 files gray takes fynepdf-grayscale 78 seconds and Ghostscript 1,038.">
 </p>
 
 # fynepdf-grayscale

@@ -1,10 +1,10 @@
 // Writes docs/grayscale.svg, the README's animation: three short scenes, one idea each.
-//   1. One real PDF from the web made grey by Ghostscript, as pictures, and by fynepdf-grayscale;
+//   1. One real PDF from the web made gray by Ghostscript, as pictures, and by fynepdf-grayscale;
 //      then all its text is selected: only fynepdf-grayscale's still has all of it.
-//   2. A race: making 1,067 files grey. fynepdf-grayscale is done while Ghostscript has done 8%.
+//   2. A race: making 1,067 files gray. fynepdf-grayscale is done while Ghostscript has done 8%.
 //   3. What that adds up to.
 // The numbers are docs/benchmarks.md's (c-0000013 is the real file). FynePDF's design system: the
-// warm grey page, white cards, blue for ours, orange for errors, Hanken Grotesk embedded, Fynebot.
+// warm gray page, white cards, blue for ours, orange for errors, Hanken Grotesk embedded, Fynebot.
 // CSS only, a 15-second loop; under prefers-reduced-motion the first scene stands still.
 //
 //   node docs/make-animation.mjs
@@ -21,11 +21,12 @@ const mark = fs
   .replace(/<\/svg>\s*$/, "")
   .replaceAll("clip0_2233_1174", "mark-clip");
 
-// c-0000013 (209 KB), and every conversion's time over 1,067 files.
+// c-0000013 (209 KB), and every conversion's time over 1,067 files. |width| is the result text's,
+// measured in Chrome (Hanken Grotesk SemiBold, 20px), so the icon and text centre under the card.
 const CARDS = [
-  { name: "Ghostscript 10.08", text: "15% of the text", size: "228 KB", selected: [0], ok: false },
-  { name: "Pages as pictures", text: "No text", size: "5.6 MB", selected: [], ok: false },
-  { name: "fynepdf-grayscale", text: "All the text", size: "202 KB", selected: [0, 1, 2, 3, 4, 5, 6, 7], ok: true },
+  { name: "Ghostscript 10.08", text: "15% of the text", width: 136, size: "228 KB", selected: [0], ok: false },
+  { name: "Pages as pictures", text: "No text", width: 66, size: "5.6 MB", selected: [], ok: false },
+  { name: "fynepdf-grayscale", text: "All the text", width: 99, size: "202 KB", selected: [0, 1, 2, 3, 4, 5, 6, 7], ok: true },
 ];
 const TIME = { ours: 78, gs: 1038 };
 
@@ -88,11 +89,13 @@ const s1 = SCENES[0];
 css.push(`@keyframes reveal{0%,${pc(SWEEP[0])}{clip-path:inset(0 0 100% 0)}${pc(SWEEP[1])},100%{clip-path:inset(0)}}`);
 parts.push(`<g class="still" ${scene(s1)}>
   <g ${rise(s1[0] + 0.1)}>
-    <text x="600" y="92" class="h1" text-anchor="middle">One real PDF from the web, made grey</text>
+    <text x="600" y="92" class="h1" text-anchor="middle">One real PDF from the web, made gray</text>
     <text x="600" y="126" class="h2" text-anchor="middle">209 KB in · then select all its text</text>
   </g>`);
 CARDS.forEach((card, i) => {
   const cx = 230 + i * 370;
+  // The result: a 20px icon, 10px, the text; centred as one.
+  const left = cx - (30 + card.width) / 2;
   const sel = card.selected
     .map((k, j) => {
       const [x, y, w] = TEXT[k];
@@ -109,8 +112,8 @@ CARDS.forEach((card, i) => {
     ${sel}
   </g>
   <g ${rise(SELECT + 1.0, 6)}>
-    ${card.ok ? tick(cx - 66, 545, 10) : cross(cx - 70, 545, 10)}
-    <text x="${cx - 50}" y="551" class="${card.ok ? "res-ours" : "res"}">${card.text}</text>
+    ${(card.ok ? tick : cross)(left + 10, 545, 10)}
+    <text x="${left + 30}" y="551" class="${card.ok ? "res-ours" : "res"}">${card.text}</text>
   </g>
   <g ${rise(SELECT + 1.3, 6)}><text x="${cx}" y="586" class="${card.size.endsWith("MB") ? "size-bad" : "size"}" text-anchor="middle">${card.size}</text></g>`);
 });
@@ -121,7 +124,7 @@ const s2 = SCENES[1];
 const start = s2[0] + 0.7, oursDur = 0.33, gsDur = oursDur * (TIME.gs / TIME.ours);
 parts.push(`<g ${scene(s2)}>
   <g ${rise(s2[0] + 0.1)}>
-    <text x="600" y="150" class="h1" text-anchor="middle">Making 1,067 files grey</text>
+    <text x="600" y="150" class="h1" text-anchor="middle">Making 1,067 files gray</text>
     <text x="600" y="184" class="h2" text-anchor="middle">every conversion's time, added up</text>
   </g>
   <text x="140" y="300" class="name-ours">fynepdf-grayscale</text>
@@ -156,7 +159,7 @@ parts.push(`<g ${scene(s3)}>
   </g>
 </g>`);
 
-const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="One real 209 KB PDF from the web made grey three ways, then all its text selected: Ghostscript 10.08's file keeps 15% of the text (228 KB), pages drawn as pictures keep none (5.6 MB), fynepdf-grayscale's keeps all of it (202 KB). Making 1,067 files grey takes fynepdf-grayscale 78 seconds and Ghostscript 1,038: fynepdf-grayscale is done when Ghostscript has done 8%. Text stays text, links and tags kept, 13 times faster than Ghostscript. Made by FynePDF.">
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="One real 209 KB PDF from the web made gray three ways, then all its text selected: Ghostscript 10.08's file keeps 15% of the text (228 KB), pages drawn as pictures keep none (5.6 MB), fynepdf-grayscale's keeps all of it (202 KB). Making 1,067 files gray takes fynepdf-grayscale 78 seconds and Ghostscript 1,038: fynepdf-grayscale is done when Ghostscript has done 8%. Text stays text, links and tags kept, 13 times faster than Ghostscript. Made by FynePDF.">
 <title>fynepdf-grayscale against Ghostscript</title>
 <defs>
   <linearGradient id="blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#007bff"/><stop offset="1" stop-color="#0046b7"/></linearGradient>
