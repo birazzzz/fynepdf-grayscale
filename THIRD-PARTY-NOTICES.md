@@ -14,3 +14,8 @@ their notices.
 The test files in `tests/fixtures` were made for these tests (by the PDF/A bench of the sister
 project [fynepdf-pdfa](https://github.com/birazzzz/fynepdf-pdfa)) and are under the same MIT
 licence.
+
+## The documentation
+
+`docs/assets` holds Hanken Grotesk (SIL Open Font License 1.1, `docs/assets/HankenGrotesk-OFL.txt`),
+embedded in the README's animation, and the FynePDF mark.
