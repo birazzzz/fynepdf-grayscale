@@ -1,7 +1,7 @@
 # fynepdf-grayscale
 
 **Make PDFs gray in place: text stays text, nothing is redrawn.** The
-[fynepdf-grayscale](https://github.com/birazzzz/fynepdf-grayscale) command line and a Node API,
+[fynepdf-grayscale](https://github.com/fynepdf/fynepdf-grayscale) command line and a Node API,
 with no Ghostscript. Made by [FynePDF](https://fynepdf.com) for its web and desktop apps.
 
 - **Every colour, where it is:** text and drawing colours, pictures, palettes, gradients,
@@ -53,7 +53,7 @@ On a platform without a package, build the command line from the repository and 
 ## More
 
 How it works, the benchmark against Ghostscript and pages drawn as pictures, and the C++ library:
-[github.com/birazzzz/fynepdf-grayscale](https://github.com/birazzzz/fynepdf-grayscale).
+[github.com/fynepdf/fynepdf-grayscale](https://github.com/fynepdf/fynepdf-grayscale).
 
 MIT, © 2026 FynePDF. The libraries inside each platform package keep their own licences
 (`licenses/`).

@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 3.16)
 project(fynepdf_grayscale
-    VERSION 0.1.0
+    VERSION 0.1.1
     DESCRIPTION "PDFs made gray in place: text stays text, nothing redrawn"
-    HOMEPAGE_URL "https://github.com/birazzzz/fynepdf-grayscale"
+    HOMEPAGE_URL "https://github.com/fynepdf/fynepdf-grayscale"
     LANGUAGES CXX)
 
 # Use it from another CMake project in any of three ways, each giving the target
 # fynepdf::grayscale:
 #   find_package(fynepdf_grayscale CONFIG REQUIRED)   after installing it (or through vcpkg.json)
-#   FetchContent_Declare(fynepdf_grayscale GIT_REPOSITORY https://github.com/birazzzz/fynepdf-grayscale ...)
+#   FetchContent_Declare(fynepdf_grayscale GIT_REPOSITORY https://github.com/fynepdf/fynepdf-grayscale ...)
 #   add_subdirectory(fynepdf-grayscale)
 #
 # It needs qpdf and a libjpeg API (libjpeg-turbo or MozJPEG); OpenJPEG (JPEG 2000 pictures) and

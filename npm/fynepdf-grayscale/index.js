@@ -27,7 +27,7 @@ function binaryPath() {
         ? `fynepdf-grayscale: its command line for ${platform} (fynepdf-grayscale-${platform}) isn't installed. ` +
             "Install again without --no-optional or --omit=optional."
         : `fynepdf-grayscale has no command line for ${platform} yet (it has ${PLATFORMS.join(", ")}). ` +
-            "Build it from https://github.com/birazzzz/fynepdf-grayscale and set FYNEPDF_GRAYSCALE_BINARY to it.",
+            "Build it from https://github.com/fynepdf/fynepdf-grayscale and set FYNEPDF_GRAYSCALE_BINARY to it.",
     );
   }
   const binary = path.join(folder, process.platform === "win32" ? "fynepdf-grayscale.exe" : "fynepdf-grayscale");

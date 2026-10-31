@@ -46,7 +46,7 @@ npx fynepdf-grayscale input.pdf output.pdf --only images      # photos gray, tex
 
 Through npm it runs on Linux (x64, arm64), Windows (x64) and macOS (Apple silicon, Intel), with
 nothing to build. Or download your platform's archive from
-[Releases](https://github.com/birazzzz/fynepdf-grayscale/releases): one program, ready to run as
+[Releases](https://github.com/fynepdf/fynepdf-grayscale/releases): one program, ready to run as
 `./fynepdf-grayscale input.pdf output.pdf`.
 
 It prints what it did as one line of JSON:
@@ -91,7 +91,7 @@ if (!result.ok) {
 
 ```cmake
 include(FetchContent)
-FetchContent_Declare(fynepdf_grayscale GIT_REPOSITORY https://github.com/birazzzz/fynepdf-grayscale.git GIT_TAG v0.1.0)
+FetchContent_Declare(fynepdf_grayscale GIT_REPOSITORY https://github.com/fynepdf/fynepdf-grayscale.git GIT_TAG v0.1.1)
 FetchContent_MakeAvailable(fynepdf_grayscale)
 
 target_link_libraries(your_app PRIVATE fynepdf::grayscale)
@@ -143,7 +143,7 @@ More: [docs/how-it-works.md](docs/how-it-works.md).
 tags along the way, and drew pages as pictures in the desktop app, where Ghostscript's AGPL
 licence can't go. Neither kept the document as it was. This keeps everything but the colour.
 
-Sister project: [fynepdf-pdfa](https://github.com/birazzzz/fynepdf-pdfa), which makes valid PDF/A
+Sister project: [fynepdf-pdfa](https://github.com/fynepdf/fynepdf-pdfa), which makes valid PDF/A
 the same way, and holds the benchmark this project is measured with.
 
 ## Licence

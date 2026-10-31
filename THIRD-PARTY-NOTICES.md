@@ -12,7 +12,7 @@ their notices.
 | [Little CMS](https://github.com/mm2/Little-CMS) (optional) | ICC colour profiles | MIT |
 
 The test files in `tests/fixtures` were made for these tests (by the PDF/A bench of the sister
-project [fynepdf-pdfa](https://github.com/birazzzz/fynepdf-pdfa)) and are under the same MIT
+project [fynepdf-pdfa](https://github.com/fynepdf/fynepdf-pdfa)) and are under the same MIT
 licence.
 
 ## The documentation

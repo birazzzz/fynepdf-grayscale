@@ -1,13 +1,13 @@
 {
   "name": "fynepdf-grayscale",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Make PDFs gray in place: text stays text, nothing redrawn. A command line and Node API, no Ghostscript",
   "keywords": ["pdf", "grayscale", "greyscale", "black and white", "print", "qpdf", "ghostscript", "convert"],
-  "homepage": "https://github.com/birazzzz/fynepdf-grayscale#readme",
-  "bugs": "https://github.com/birazzzz/fynepdf-grayscale/issues",
+  "homepage": "https://github.com/fynepdf/fynepdf-grayscale#readme",
+  "bugs": "https://github.com/fynepdf/fynepdf-grayscale/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/birazzzz/fynepdf-grayscale.git",
+    "url": "git+https://github.com/fynepdf/fynepdf-grayscale.git",
     "directory": "npm/fynepdf-grayscale"
   },
   "license": "MIT",
@@ -22,10 +22,10 @@
     "node": ">=18"
   },
   "optionalDependencies": {
-    "fynepdf-grayscale-darwin-arm64": "0.1.0",
-    "fynepdf-grayscale-darwin-x64": "0.1.0",
-    "fynepdf-grayscale-linux-arm64": "0.1.0",
-    "fynepdf-grayscale-linux-x64": "0.1.0",
-    "fynepdf-grayscale-win32-x64": "0.1.0"
+    "fynepdf-grayscale-darwin-arm64": "0.1.1",
+    "fynepdf-grayscale-darwin-x64": "0.1.1",
+    "fynepdf-grayscale-linux-arm64": "0.1.1",
+    "fynepdf-grayscale-linux-x64": "0.1.1",
+    "fynepdf-grayscale-win32-x64": "0.1.1"
   }
 }

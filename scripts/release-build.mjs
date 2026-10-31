@@ -151,7 +151,7 @@ fs.writeFileSync(path.join(stage, "README.txt"), `fynepdf-grayscale ${version} f
   ${program} input.pdf output.pdf --only drawings    text and drawings gray, photos in colour
   ${program} input.pdf output.pdf --only images      photos gray, text and drawings in colour
 
-Documentation: https://github.com/birazzzz/fynepdf-grayscale
+Documentation: https://github.com/fynepdf/fynepdf-grayscale
 
 Made by FynePDF (https://fynepdf.com), MIT licence (LICENSE). The libraries linked into the
 program keep their own licences, in licenses/.

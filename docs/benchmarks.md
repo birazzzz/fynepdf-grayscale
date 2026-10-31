@@ -43,7 +43,7 @@ keeps everything else, and its files still come out a little smaller than the in
 
 ## How it was measured
 
-The files and the measures are the [fynepdf-pdfa bench](https://github.com/birazzzz/fynepdf-pdfa/blob/main/docs/benchmarks.md):
+The files and the measures are the [fynepdf-pdfa bench](https://github.com/fynepdf/fynepdf-pdfa/blob/main/docs/benchmarks.md):
 set A (56 small PDFs made for the bench), set C (1,000 PDFs from Digital Corpora's SafeDocs web
 crawl) and set E (11 exports from Chrome, LibreOffice and LaTeX). The veraPDF corpus is a PDF/A
 test, so Grayscale doesn't run on it; a private set of 93 files is left out of these numbers.

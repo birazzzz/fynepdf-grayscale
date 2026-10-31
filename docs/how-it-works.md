@@ -62,6 +62,6 @@ slowest 3.5 s, and none used more than 255 MB ([benchmarks](benchmarks.md)).
 
 `ctest` makes the 64 files in `tests/fixtures` gray whole, first page only, and with each kind of
 content alone, and checks that every result opens with its pages and that "only" means only.
-The PDF/A project's [bench](https://github.com/birazzzz/fynepdf-pdfa/tree/main/bench) draws the
+The PDF/A project's [bench](https://github.com/fynepdf/fynepdf-pdfa/tree/main/bench) draws the
 pages of every result and checks that no colour is left, that the text is still there and that
 the pages look as they should.

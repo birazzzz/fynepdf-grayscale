@@ -97,10 +97,10 @@ first version goes up by hand. npm needs two-factor login on your account.
    ```bash
    # The platform packages: CI publishes them.
    for name in fynepdf-grayscale-linux-x64 fynepdf-grayscale-linux-arm64 fynepdf-grayscale-win32-x64 fynepdf-grayscale-darwin-arm64 fynepdf-grayscale-darwin-x64; do
-     npx -y npm@11 trust github "$name" --file release.yml --repository birazzzz/fynepdf-grayscale --allow-publish
+     npx -y npm@11 trust github "$name" --file release.yml --repository fynepdf/fynepdf-grayscale --allow-publish
    done
    # fynepdf-grayscale: CI only stages it, and you approve each version.
-   npx -y npm@11 trust github fynepdf-grayscale --file release.yml --repository birazzzz/fynepdf-grayscale --allow-stage-publish
+   npx -y npm@11 trust github fynepdf-grayscale --file release.yml --repository fynepdf/fynepdf-grayscale --allow-stage-publish
    ```
 
    Each asks for your two-factor login and prints `Trust configuration created successfully`.
@@ -112,6 +112,16 @@ first version goes up by hand. npm needs two-factor login on your account.
 6. **After the first staged release works**, lock each package to it: npmjs.com → the package →
    Settings → Publishing access → "Require two-factor authentication and disallow bypass 2fa
    tokens". Trusted publishing keeps working; tokens stop.
+
+### If the repository moves
+
+A trusted publisher names the GitHub owner and repository, and npm can't change one: add a new
+one per package with the step 4 commands and the new `--repository` (a package holds up to 10, so
+the old one can stay). A new trusted publisher expires if no publish uses it within 2 days, so add
+it right before a release. Point `repository`, `homepage` and `bugs` in
+`npm/fynepdf-grayscale/package.json` at the new place too: npm refuses a publish from GitHub whose
+`repository.url` names another repository. (The repository moved from `birazzzz` to `fynepdf` in
+October 2026; GitHub redirects the old links.)
 
 ## Updating what the build uses
 
